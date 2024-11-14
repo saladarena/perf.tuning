@@ -148,14 +148,20 @@ public class UnSafeUtils {
         }
 
         Preconditions.checkState(offHeapAddress > 0, "negative pointer or size");
+        /**
         Preconditions.checkState(
                 offHeapAddress < Long.MAX_VALUE - Integer.MAX_VALUE,
                 "Segment initialized with too large address: "
                         + offHeapAddress
                         + " ; Max allowed address is "
                         + (Long.MAX_VALUE - Integer.MAX_VALUE - 1));
+         **/
 
         return offHeapAddress;
+    }
+
+    public static void copyMemory(long srcAddress, long destAddress, long size) {
+        UNSAFE.copyMemory(srcAddress,destAddress,size);
     }
 
     /** Should not be instantiated. */

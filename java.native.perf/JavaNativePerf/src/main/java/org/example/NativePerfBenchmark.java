@@ -2,7 +2,7 @@ package org.example;
 
 public class NativePerfBenchmark {
     static {
-        System.loadLibrary("jni_demo");
+        //System.loadLibrary("jni_demo");
     }
 
     private final NativeActions nativeActions;
@@ -46,7 +46,7 @@ public class NativePerfBenchmark {
 
     public static void main(String[] args) {
         NativePerfBenchmark nativePerfBenchmark = new NativePerfBenchmark();
-        nativePerfBenchmark.doNativeBenchmark();
-        //nativePerfBenchmark.doNormalBenchmark();
+        //nativePerfBenchmark.doNativeBenchmark();
+        nativePerfBenchmark.doNormalBenchmark();
     }
 }

@@ -8,10 +8,10 @@ public class AbstractActions {
     protected ByteBuffer outputBuffer = ByteBuffer.allocateDirect(OUTPUT_BUFFER_SIZE);
     protected final long  outputAddress = UnSafeUtils.getByteBufferAddress(outputBuffer);
 
-    public static final int NUMBER_BUFFER = 100;
+    public static final int NUMBER_BUFFER = 2;
 
     public static final int DATA_BLOCK_SIZE = 128;
-    public static final int BUFFER_SIZE = DATA_BLOCK_SIZE * 256;
+    public static final int BUFFER_SIZE = DATA_BLOCK_SIZE * 4;
 
 
     //data mem layout
