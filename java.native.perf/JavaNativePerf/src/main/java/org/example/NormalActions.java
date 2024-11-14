@@ -20,9 +20,10 @@ public class NormalActions extends AbstractActions {
             int ret = 0;
             do {
                 executor.processData();
+
+                ret = handleOutput(DataCount);
                 DataCount ++;
-                ret = handleOutput();
-            } while (ret != 0);
+            } while (ret == 0);
         }
         return DataCount;
     }

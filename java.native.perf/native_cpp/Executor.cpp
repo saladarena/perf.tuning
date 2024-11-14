@@ -28,6 +28,7 @@ Executor::~Executor() {
 
 void Executor::setBuffer(uint8_t *bufferAddress, int size)
 {
+    LOG("set Buffer");
     buffer = bufferAddress;
     size_ = size;
     position = 0;
@@ -53,7 +54,7 @@ void Executor::processData()
     //retStatus 0 more data , others buffer completed.
 
     LOG("output data address " << reinterpret_cast<long> (outputBufferAddress_));
-    std::memcpy(outputBufferAddress_ + 1, internalPre_, length);
+    std::memcpy(outputBufferAddress_ + 1, internalPre_, length + 1);
 
     uint8_t retStatus =  position >= size_ ? 1 : 0;
     * outputBufferAddress_  =  retStatus;

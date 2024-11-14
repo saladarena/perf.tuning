@@ -3,7 +3,7 @@ project(navtive_demo)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
-add_definitions(-DDEBUG)
+# add_definitions(-DDEBUG)
 
 # Find the JNI package
 find_package(JNI REQUIRED)

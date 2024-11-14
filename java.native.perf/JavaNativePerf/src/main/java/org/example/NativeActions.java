@@ -14,14 +14,16 @@ public class NativeActions extends AbstractActions{
         int DataCount = 0;
         executorRef = createNativeExecutor(outputAddress, OUTPUT_BUFFER_SIZE);
 
-        for (int i = 0 ; i < NUMBER_BUFFER; i ++) {
-           setBuffer(executorRef, bufferAddresses[i], BUFFER_SIZE);
-           int ret = 0;
-           do {
+        for (int i = 0 ; i < NUMBER_BUFFER; i++) {
+            int BufferCount = 0;
+            setBuffer(executorRef, bufferAddresses[i], BUFFER_SIZE);
+            int ret = 0;
+            do {
                processData(executorRef);
-               DataCount ++;
-               ret = handleOutput();
-           } while (ret != 0);
+               ret = handleOutput(BufferCount);
+               BufferCount ++;
+            } while (ret == 0);
+            DataCount += BufferCount;
         }
         return DataCount;
     }

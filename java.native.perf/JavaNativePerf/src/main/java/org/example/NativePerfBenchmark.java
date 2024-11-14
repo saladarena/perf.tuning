@@ -29,7 +29,7 @@ public class NativePerfBenchmark {
     }
 
     public void doNormalBenchmark() {
-        int iteration = 1000;
+        int iteration = 1;
         int totalCount = 0;
 
         long start = System.currentTimeMillis();
@@ -47,6 +47,6 @@ public class NativePerfBenchmark {
     public static void main(String[] args) {
         NativePerfBenchmark nativePerfBenchmark = new NativePerfBenchmark();
         nativePerfBenchmark.doNativeBenchmark();
-        nativePerfBenchmark.doNormalBenchmark();
+        //nativePerfBenchmark.doNormalBenchmark();
     }
 }
