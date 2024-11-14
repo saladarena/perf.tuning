@@ -74,7 +74,11 @@ int Executor::handleOutputInternal(uint8_t *output, size_t size)
         throw std::runtime_error("length is not 127!");
      }
 
+#ifdef DEBUG
+
      DataHelper::printDataBuffer((output + 2), length);
+#endif
+
      LOG ("After printDataBuffer");
      return ret;
 }
